@@ -29,6 +29,11 @@ if(args.length > 0) {
                     let xPosition = placeArguments[0];
                     let yPosition = placeArguments[1];
                     let facing = placeArguments[2];
+                    console.log(xPosition+'|'+table.x)
+                    if((xPosition >= table.x) && (yPosition >= table.y)){
+                        console.log('Robot position out of table top');
+                        return;
+                    }
 
                     robot.place(xPosition, yPosition, facing);
                     break;
