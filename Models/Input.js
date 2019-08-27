@@ -2,7 +2,12 @@
 
 const fs = require('fs')
 
+function Input() {
+	console.log(2)
+}
+
 function Input(filename) {
+	console.log(1)
 	try {
 		this.commands = fs.readFileSync(filename).toString().split('\n')
 	} catch(e) {
@@ -12,10 +17,6 @@ function Input(filename) {
 			throw e
 		}
 	}
-}
-
-function Input() {
-	
 }
 
 Input.prototype.isFirstCommandValid = function() {
