@@ -36,4 +36,21 @@ Robot.prototype.move = function(table) {
 	}
 }
 
+Robot.prototype.rotate = function(newFacing) {
+	switch(this.facing){
+	   	case 'NORTH':
+			this.facing = (newFacing == 'LEFT')?'WEST':'EAST';
+			break;
+	   	case 'SOUTH':
+			this.facing = (newFacing == 'LEFT')?'EAST':'WEST';
+			break;
+	   	case 'EAST':
+			this.facing = (newFacing == 'LEFT')?'NORTH':'SOUTH';
+			break;
+	   	case 'WEST':
+			this.facing = (newFacing == 'LEFT')?'SOUTH':'NORTH';
+			break;
+   	}
+}
+
 module.exports = Robot;

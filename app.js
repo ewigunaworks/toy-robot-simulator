@@ -35,6 +35,10 @@ if(args.length > 0) {
                 case 'MOVE':
                     robot.move(table);
                     break;
+                case 'LEFT':
+                case 'RIGHT':
+                    robot.rotate(command);
+                    break;
                 case 'REPORT':
                     console.log("\n\nOutput:" + robot.x + "," + robot.y + "," + robot.facing + "\n\n");
                     break;
