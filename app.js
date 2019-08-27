@@ -75,7 +75,7 @@ if(args.length > 0) {
                 let yPosition = placeArguments[1];
                 let facing = placeArguments[2];
                 
-                if((xPosition >= table.x) && (yPosition >= table.y)){
+                if(((xPosition >= table.x) && (yPosition >= table.y)) || ((xPosition < 0) || (yPosition < 0))){
                     console.log('Robot position out of table top');
                     return;
                 }
