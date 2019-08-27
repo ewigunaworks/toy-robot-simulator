@@ -13,24 +13,21 @@ console.log(args)
 
 if(args.length > 0) {
 	let commandFileUrl = args[0]
-	console.log(commandFileUrl)
 	let input = new Input(commandFileUrl)
-	console.log(input)
 
 	if(input.commands && input.isFirstCommandValid()) {
 		for(let i = 0; i < input.commands.length; i++) {
 			let command = input.commands[i]
-			console.log('command: '+command)
 
 			switch(input.getCommandNoArguments(command)){
                 case 'PLACE':
                     let placeArguments = input.getCommandArguments(command);
-                    console.log(placeArguments)
+                    
                     let xPosition = placeArguments[0];
                     let yPosition = placeArguments[1];
                     let facing = placeArguments[2];
-                    console.log(xPosition+'|'+table.x)
-                    if((xPosition >= table.x) && (yPosition >= table.y)){
+                    
+                    if(((xPosition >= table.x) || (yPosition >= table.y)) || ((xPosition < 0) || (yPosition < 0))){
                         console.log('Robot position out of table top');
                         return;
                     }
