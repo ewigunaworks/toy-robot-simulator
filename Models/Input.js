@@ -2,18 +2,12 @@
 
 const fs = require('fs')
 
-function Input() {
-	console.log(2)
-}
-
-function Input(filename) {
-	console.log(1)
+function Input(filename = '') {
+	console.log(1+' '+filename)
 	try {
 		this.commands = fs.readFileSync(filename).toString().split('\n')
 	} catch(e) {
-		if(e.code == 'ENOENT') {
-			console.log('File not found!')
-		} else {
+		if(e.code != 'ENOENT') {
 			throw e
 		}
 	}
