@@ -3,7 +3,6 @@
 const fs = require('fs')
 
 function Input(filename = '') {
-	console.log(1+' '+filename)
 	try {
 		this.commands = fs.readFileSync(filename).toString().split('\n')
 	} catch(e) {

@@ -10,7 +10,6 @@ const table = new Table(5, 5)
 const robot = new Robot()
 
 let args = process.argv.slice(2)
-console.log(args)
 
 if(args.length > 0) {
 	let commandFileUrl = args[0]
