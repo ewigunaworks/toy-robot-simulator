@@ -32,6 +32,9 @@ if(args.length > 0) {
 
                     robot.place(xPosition, yPosition, facing);
                     break;
+                case 'MOVE':
+                    robot.move(table);
+                    break;
                 case 'REPORT':
                     console.log("\n\nOutput:" + robot.x + "," + robot.y + "," + robot.facing + "\n\n");
                     break;
